@@ -23,10 +23,10 @@ describe('kumpulan test case', function(){
         cy.get('select').select('Audi')
     })
     // Klik tombol “Click Me” pada bagian simple controls lalu cek apakah terdapat tulisan button success.
-    it('test-case4', function(){
+    it('test-case5', function(){
         cy.visit('https://ultimateqa.com/simple-html-elements-for-automation/')  // parameternya URL
-        cy.get('.entry-title').click()
-        cy.contains('success')
+        cy.get('.et_pb_cta_0 > .et_pb_button_wrapper > .et_pb_button').click()
+        cy.get('.entry-title').should('contain','success')
     })
     Cypress.on('uncaught:exception', (err, runnable)=>{
         return false
